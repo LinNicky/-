@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>代碼查詢</title>
+        <link rel="icon" href="../static/img/bbb.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../static/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../static/css/fullcalendar.min.css">
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/tooplate.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    </head>
+    
+
+<body id="reportsPage" class="bg02">
+    <div class="" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                   <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                        <a class="navbar-brand" href="/index2">
+                            <img src="../static/img/bbb.png"width="80px" height="80px">
+                            <h1 class="tm-site-title mb-0">股票網站</h1>
+                        </a>
+                        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/history">歷史資料</a>
+                                </li>
+                                    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/products">本日熱門排行</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/search">股票搜尋</a>
+                                </li>
+    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/accounts">我的最愛</a> 
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex" href="/accounts">
+                                        <img src="../static/img/ccc.png"width="40px" height="40px">
+                                        <span>{{username}}</span>
+                                    </a>                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!----row---->
+            <div class="row tm-content-row tm-mt-big">
+                <div class="col-xl-12 col-lg-12 tm-md-12 tm-sm-12 tm-col">
+                    <div class="bg-white tm-block h-100">
+                        <form action="/test" method="post" target="_self" style="text-align: center; ">
+                            <select id="slt1" name="slt1">
+                                <option>或選擇公司類別</option>
+                                <option name="化學工業" value="#tab_1">化學工業</option>
+                                <option name="水泥工業" value="#tab_2">水泥工業</option>
+                                <option name="半導體業" value="#tab_3">半導體業</option>
+                                <option name="生技醫療業" value="#tab_4">生技醫療業</option>
+                                <option name="光電業" value="#tab_5">光電業</option>
+                                <option name="汽車工業" value="#tab_6">汽車工業</option>
+                                <option name="其他業" value="#tab_7">其他業</option>
+                                <option name="其他電子業" value="#tab_8">其他電子業</option>
+                                <option name="油電燃氣業" value="#tab_9">油電燃氣業</option>
+                                <option name="金融保險業" value="#tab_10">金融保險業</option>
+                                <option name="建材營造業" value="#tab_11">建材營造業</option>
+                                <option name="玻璃陶瓷業" value="#tab_12">玻璃陶瓷業</option>
+                                <option name="食品工業" value="#tab_13">食品工業</option>
+                                <option name="紡織纖維" value="#tab_14">紡織纖維</option>
+                                <option name="航運業" value="#tab_15">航運業</option>
+                                <option name="通信網路業" value="#tab_16">通信網路業</option>
+                                <option name="造紙工業" value="#tab_17">造紙工業</option>
+                                <option name="貿易百貨業" value="#tab_18">貿易百貨業</option>
+                                <option name="塑膠工業" value="#tab_19">塑膠工業</option>
+                                <option name="資訊服務業" value="#tab_20">資訊服務業</option>
+                                <option name="電子通路業" value="#tab_21">電子通路業</option>
+                                <option name="電子零組件業" value="#tab_22">電子零組件業</option>
+                                <option name="電腦及周邊設備業" value="#tab_23">電腦及周邊設備業</option>
+                                <option name="電器電纜" value="#tab_24">電器電纜</option>
+                                <option name="電機機械" value="#tab_25">電機機械</option>
+                                <option name="橡膠工業" value="#tab_26">橡膠工業</option>
+                                <option name="鋼鐵工業" value="#tab_27">鋼鐵工業</option>
+                                <option name="觀光事業" value="#tab_28">觀光事業</option>
+                            </select>
+                              <br>
+                            
+                            <input type="submit" class="btn btn-primary d-inline-block mx-auto" value="搜尋">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped tm-table-striped-even mt-3">
+                                    {% for i in df %} 
+                                    <td class="tm-product-name">{{i[0]}}{{i[1]}}{{i[2]}}{{i[3]}}{{i[4]}}{{i[5]}}{{i[6]}}{{i[7]}}{{i[8]}}</td>
+                                   
+                                    {% endfor %}
+                                </table>
+                            </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

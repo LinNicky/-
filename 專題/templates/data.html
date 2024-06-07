@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>公司資料</title>
+        <link rel="icon" href="../static/img/bbb.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../static/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../static/css/fullcalendar.min.css">
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/tooplate.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    </head>
+    
+
+<body id="reportsPage" class="bg02">
+    <div class="" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                   <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                        <a class="navbar-brand" href="/index2">
+                            <img src="../static/img/bbb.png"width="80px" height="80px">
+                            <h1 class="tm-site-title mb-0">股票網站</h1>
+                        </a>
+                        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/history">歷史資料</a>
+                                </li>
+                                    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/products">本日熱門排行</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/search">股票搜尋</a>
+                                </li>
+    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/accounts">我的最愛</a> 
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex" href="/accounts">
+                                        <img src="../static/img/ccc.png"width="40px" height="40px">
+                                        <span>{{username}}</span>
+                                    </a>                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!----row---->
+            <div class="row tm-content-row tm-mt-big">
+                <div class="col-xl-12 col-lg-12 tm-md-12 tm-sm-12 tm-col">
+                    <div class="bg-white tm-block h-100">
+                        <script>
+                            var bars='{{pic | safe}}';
+                            var obj =JSON.parse(bars);
+                            Plotly.newPlot('myDiv',obj)
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
